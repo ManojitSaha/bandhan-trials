@@ -20,7 +20,6 @@
     </a>
     <nav class="nav-links">
       <a href="#resorts">Resorts</a>
-      <a href="#planner">Plan your trip</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -111,168 +110,6 @@
     </section>
 
   </main>
-
-  <!-- AI trip planner -->
-  <section class="planner" id="planner">
-    <div class="planner-inner">
-      <div class="planner-form-panel">
-        <h2 class="planner-title">Plan your trip</h2>
-        <p class="planner-lede">
-          Tell us where and when you want to go, and we’ll draft a day-by-day
-          plan for West Bengal, Sikkim and North East India.
-        </p>
-
-        <form id="trip-plan-form" novalidate>
-          <fieldset class="details-fieldset">
-            <legend class="details-legend">Your details</legend>
-            <div class="form-row">
-              <label class="field">
-                <span class="field-label">Name <span class="required">*</span></span>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  maxlength="100"
-                  autocomplete="name"
-                  placeholder="Asha Saha"
-                />
-              </label>
-              <label class="field">
-                <span class="field-label">Mobile number <span class="required">*</span></span>
-                <input
-                  type="tel"
-                  name="mobile"
-                  required
-                  maxlength="20"
-                  autocomplete="tel"
-                  placeholder="9876543210"
-                />
-              </label>
-              <label class="field">
-                <span class="field-label">Email (optional)</span>
-                <input
-                  type="email"
-                  name="email"
-                  maxlength="200"
-                  autocomplete="email"
-                  placeholder="asha@example.com"
-                />
-              </label>
-            </div>
-          </fieldset>
-
-          <div class="form-row">
-            <label class="field-label">Regions <span class="required">*</span></div>
-            <div class="chips">
-              <label class="chip">
-                <input type="checkbox" name="regions" value="west-bengal" />
-                <span>West Bengal</span>
-              </label>
-              <label class="chip">
-                <input type="checkbox" name="regions" value="sikkim" />
-                <span>Sikkim</span>
-              </label>
-              <label class="chip">
-                <input type="checkbox" name="regions" value="north-east" />
-                <span>North East India</span>
-              </label>
-            </div>
-            <p class="field-hint">Pick at least one region.</p>
-          </div>
-
-          <div class="form-row">
-            <label class="field">
-              <span class="field-label">Start date</span>
-              <input type="date" name="startDate" required />
-            </label>
-            <label class="field">
-              <span class="field-label">Days</span>
-              <input type="number" name="days" min="1" max="14" value="5" required />
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label class="field">
-              <span class="field-label">Travellers</span>
-              <input type="number" name="travellers" min="1" max="12" value="2" required />
-            </label>
-            <label class="field">
-              <span class="field-label">Budget</span>
-              <select name="budget">
-                <option value="budget">Budget</option>
-                <option value="comfort" selected>Comfort</option>
-                <option value="premium">Premium</option>
-              </select>
-            </label>
-            <label class="field">
-              <span class="field-label">Pace</span>
-              <select name="pace">
-                <option value="relaxed">Relaxed</option>
-                <option value="balanced" selected>Balanced</option>
-                <option value="active">Active</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label class="field-label">Interests <span class="required">*</span></div>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="interests" value="tea" /><span>Tea gardens</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="trekking" /><span>Trekking</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="monasteries" /><span>Monasteries</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="wildlife" /><span>Wildlife</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="food" /><span>Food</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="culture" /><span>Culture</span></label>
-              <label class="chip"><input type="checkbox" name="interests" value="photography" /><span>Photography</span></label>
-            </div>
-            <p class="field-hint">Pick at least one interest.</p>
-          </div>
-
-          <div class="form-row">
-            <label class="field">
-              <span class="field-label">Anything else? (optional)</span>
-              <textarea name="notes" rows="4" maxlength="500" placeholder="e.g. Slow mornings, travelling with kids"></textarea>
-            </label>
-          </div>
-
-          <div id="trip-form-error" class="form-error" role="alert" tabindex="-1" hidden></div>
-
-          <div class="form-actions">
-            <button type="submit" id="trip-submit-plan">Create my trip plan</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="planner-result-panel">
-        <div id="planner-error" class="form-error" role="alert" tabindex="-1" hidden></div>
-
-        <div id="planner-panel" class="planner-empty" hidden>
-          <h2 class="planner-title">Your AI plan</h2>
-          <p class="planner-empty-text">
-            No plan yet. Fill in your details on the left and we’ll draft one.
-          </p>
-        </div>
-
-        <div id="planner-result" class="planner-result" hidden>
-          <div class="planner-actions">
-            <a id="planner-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.27-1.38a9.9 9.9 0 0 0 4.77 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.17 8.17 0 0 1-1.26-4.35c0-4.52 3.68-8.2 8.27-8.2 2.21 0 4.28.86 5.85 2.42a8.15 8.15 0 0 1 2.42 5.79c0 4.53-3.69 8.21-8.28 8.21zm4.53-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
-              WhatsApp Us
-            </a>
-            <button type="button" id="trip-regenerate-plan">Generate again</button>
-            <button type="button" id="trip-discard-plan">Discard plan</button>
-          </div>
-
-          <h2 id="trip-plan-heading" class="planner-plan-title">Plan title</h2>
-          <p class="planner-plan-summary"></p>
-
-          <ol id="trip-plan-days" class="planner-days"></ol>
-
-          <div id="trip-plan-tips" class="planner-tips"></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Contact -->
   <section class="contact" id="contact">
@@ -400,7 +237,5 @@
   </script>
 
   <script src="config.js"></script>
-  <script src="planner-core.js"></script>
-  <script src="planner.js"></script>
 </body>
 </html>
